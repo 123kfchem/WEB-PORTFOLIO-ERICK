@@ -270,6 +270,33 @@
             </footer>
 
         </section>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function () {
+    emailjs.init("F4iZiX-lmjjJ8qEHB");
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_yz76aop",
+        "template_rf13hg9",
+        this
+    ).then(
+        function () {
+            alert("Message sent successfully 🚀");
+            document.getElementById("contact-form").reset();
+        },
+        function (error) {
+            alert("Message failed ❌");
+            console.log(error);
+        }
+    );
+});
+</script>
+
 </body> 
 
 </html>
